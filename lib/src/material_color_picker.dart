@@ -174,20 +174,9 @@ class _MaterialColorPickerState extends State<MaterialColorPicker> {
         ? _buildListMainColor(_colors)
         : _buildListMainColor(_colors);
 
-    // Size of dialog
-    final double width = MediaQuery.of(context).size.width * .80;
-    // Number of circle per line, depend on width and circleSize
-    final int nbrCircleLine = width ~/ (widget.circleSize + widget.spacing);
-
     return Container(
-      width: width,
-      child: GridView.count(
-        shrinkWrap: widget.shrinkWrap,
-        physics: widget.physics,
-        padding: const EdgeInsets.all(16.0),
-        crossAxisSpacing: widget.spacing,
-        mainAxisSpacing: widget.spacing,
-        crossAxisCount: nbrCircleLine,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: listChildren,
       ),
     );
