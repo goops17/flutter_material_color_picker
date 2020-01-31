@@ -172,7 +172,7 @@ class _MaterialColorPickerState extends State<MaterialColorPicker> {
   Widget build(BuildContext context) {
     final listChildren = _isMainSelection || !widget.allowShades
         ? _buildListMainColor(_colors)
-        : _buildListShadesColor(_mainColor);
+        : _buildListMainColor(_colors);
 
     // Size of dialog
     final double width = MediaQuery.of(context).size.width * .80;
